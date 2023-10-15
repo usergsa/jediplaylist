@@ -63,7 +63,7 @@
 function abrirNovaAba() {
   var novaAba = window.open('https://www.google.com');
   var timer = setTimeout(function() {
-  console.log(timer)
+  document.title = timer
   if (!novaAba.closed) {
     novaAba.close();
   }
