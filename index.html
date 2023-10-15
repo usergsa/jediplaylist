@@ -76,12 +76,11 @@ function tmr(){
   document.title = t;
   const titulo = document.getElementById('tt');
   titulo.innerText = t;
-  if(event.data<1){
-          clearInterval(id);id=0;
-     }
 }
 
-  
+ if(event.data<1){
+     clearInterval(id);id=0;
+     }  
 </script> 
 </body>
   
