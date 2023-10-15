@@ -45,6 +45,7 @@
       function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING && !done) {
           setTimeout(stopVideo, 6000);
+          var id =setInterval(tmr, 1000);
           done = true;
         }
       }
