@@ -61,7 +61,17 @@
   
 <script>
 function abrirNovaAba() {
-  window.open("https://www.example.com");
+  var novaAba = window.open('https://www.google.com');
+  var timer = setTimeout(function() {
+  console.log(timer)
+  if (!novaAba.closed) {
+    novaAba.close();
+  }
+}, 10000);
+
+novaAba.onblur = function() {
+  clearTimeout(timer); 
+}
 }  
 </script> 
 </body>
