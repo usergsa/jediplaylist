@@ -53,11 +53,13 @@
       if(event.data>1){
           clearInterval(id);id=0;
           t++;
-        }else{
-        if(id==0){
+        }
+      if(id==0 && event.data==1){
           id =setInterval(tmr, 1000);
-        }}
-        
+        }
+      if(event.data<1){
+        clearInterval(id);id=0;
+      }   
       }
       
       function stopVideo() {
@@ -78,9 +80,6 @@ function tmr(){
   titulo.innerText = t;
 }
 
- if(event.data<1){
-     clearInterval(id);id=0;
-     }  
 </script> 
 </body>
   
