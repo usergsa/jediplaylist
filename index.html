@@ -9,7 +9,7 @@
     <div class="video" id="player"></div>
     <div class="menu">
      <button onclick="abrirNovaAba()">Abrir Link em Nova Aba</button>
-     <h1>Timer</h1> 
+     <h1 id="tt">Timer</h1> 
   </div>
   </div>
     <script>
@@ -75,6 +75,8 @@ var t=60;
 function tmr(){
   t--;
   document.title = t;
+  const titulo = document.getElementById('tt');
+  titulo.innerText = t;
 }
 
   
