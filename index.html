@@ -67,14 +67,11 @@ function abrirNovaAba() {
   var id =setInterval(tmr, 1000);
   function tmr(){
   t++;
-  document.title = t;
+  document.title = YT.PlayerState.PLAYING;
 }
 }
 
-  
-window.onfocus = () => {
-  console.log('Aba 2 está ativa!');  
-}
+
   
 </script> 
 </body>
