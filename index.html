@@ -45,6 +45,7 @@
         console.log(event.data);
         if(event.data>1){
           clearInterval(id);
+          t=0;
         }
         if (event.data == YT.PlayerState.PLAYING && !done) {
           setTimeout(stopVideo, 6000);
