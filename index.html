@@ -61,19 +61,22 @@
   
 <script>
 function abrirNovaAba() {
-  var novaAba = window.open('https://www.google.com');
   var t=0;
-  var timer = setTimeout(function() {
-  document.title = t;
+  var novaAba = window.open('https://www.google.com');
+  
+document.title = t;
+var id =setInterval(tmr, 1000);
+function tmr(){
   t++;
-  if (!novaAba.closed) {
-    novaAba.close();
-  }
-}, 1000);
+  document.title = t;
 
-novaAba.onblur = function() {
-  timer=0;
+  novaAba.onblur = function() {
+    timer=0;
+  }
 }
+//novaAba.close();
+//clearInterval(id);
+//id =setInterval(tmr, 1000);  
 }  
 </script> 
 </body>
