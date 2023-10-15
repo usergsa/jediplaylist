@@ -66,18 +66,18 @@ function abrirNovaAba() {
   
 //document.title = t;
 var id =setInterval(tmr, 1000);
+//novaAba.close();
+//clearInterval(id);
+//id =setInterval(tmr, 1000);  
+}
+
 function tmr(){
   t++;
-  
-
   novaAba.onblur = function() {
     document.title = "close";
   }
 }
-//novaAba.close();
-//clearInterval(id);
-//id =setInterval(tmr, 1000);  
-}  
+  
 </script> 
 </body>
   
