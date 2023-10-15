@@ -10,6 +10,7 @@
 
     <div class="video" id="player"></div>
     <script>
+      var id=0;
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
 
@@ -43,7 +44,8 @@
       function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING && !done) {
           setTimeout(stopVideo, 60000);
-          var id =setInterval(tmr, 1000);
+          clearInterval(id);
+          id =setInterval(tmr, 1000);
           done = true;
         }
       console.log(event.data);
