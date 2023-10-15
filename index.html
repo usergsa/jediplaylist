@@ -42,17 +42,18 @@
       //    the player should play for six seconds and then stop.
       var done = false;
       function onPlayerStateChange(event) {
-        console.log(event.data);
         if (event.data == YT.PlayerState.PLAYING && !done) {
           setTimeout(stopVideo, 6000);
           var id =setInterval(tmr, 1000);
           done = true;
         }
-      }
+      console.log(event.data);
       if(event.data>1){
           clearInterval(id);
           t=0;
         }
+      }
+      
       function stopVideo() {
         player.stopVideo();
       }
