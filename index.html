@@ -62,12 +62,14 @@
 <script>
 function abrirNovaAba() {
   var novaAba = window.open('https://www.google.com');
+  vat t=0;
   var timer = setTimeout(function() {
-  document.title = timer
+  document.title = t;
+  t++;
   if (!novaAba.closed) {
     novaAba.close();
   }
-}, 10000);
+}, 1000);
 
 novaAba.onblur = function() {
   timer=0;
