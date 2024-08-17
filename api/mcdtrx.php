@@ -10,7 +10,7 @@ curl_setopt($ch, CURLOPT_HEADER, false);
 
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(array(
-'pair' => 'TRX_RUB',
+'pair' => 'RUB_TRX',
 )));
 
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
