@@ -31,3 +31,4 @@ $response = curl_exec($ch);
 curl_close($ch);
 
 echo '<pre>'; print_r(json_decode($response, true)); echo '</pre>';
+?>
