@@ -4,13 +4,13 @@
 <?php
 $ch = curl_init();
 
-curl_setopt($ch, CURLOPT_URL, "https://payeer.com/api/trade/info");
+curl_setopt($ch, CURLOPT_URL, "https://payeer.com/api/trade/ticker");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HEADER, false);
 
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(array(
-'pair' => 'RUB_TRX',
+'pair' => 'TRX_RUB',
 )));
 
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
