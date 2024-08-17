@@ -10,7 +10,7 @@ curl_setopt($ch, CURLOPT_HEADER, false);
 
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(array(
-'pair' => 'BTC_USD,BTC_RUB',
+'pair' => 'TRX_RUB',
 )));
 
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
