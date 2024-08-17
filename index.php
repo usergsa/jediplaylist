@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+<body>
 <?php
 $msec = round(microtime(true) * 1000);
 
@@ -32,3 +35,5 @@ curl_close($ch);
 
 echo '<pre>'; print_r(json_decode($response, true)); echo '</pre>';
 ?>
+</body>
+</html>
