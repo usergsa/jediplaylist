@@ -5,6 +5,55 @@
   <title>My Play List</title>
 </head>
 <body>
+  <canvas id="meuGrafico" width="400" height="300"></canvas>
+
+<script>
+    const canvas = document.getElementById("meuGrafico");
+    const ctx = canvas.getContext("2d");
+    
+
+    // Largura e altura das barras
+    const larguraBarra = 50;
+    const alturaMaxima = 200;
+    dados = [0, 0, 0, 0];
+    
+    var a = 5
+    loop();
+    function loop() {
+        console.log(a)
+        // Dados do gráfico (valores das barras)
+        dados = [dados[1], dados[2], dados[3], getRand(1, 60)];
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        // Desenhe as barras
+        for (let i = 0; i < dados.length; i++) {
+            const x = i * (larguraBarra + 10);
+            const altura = (dados[i] / 100) * alturaMaxima;
+            ctx.fillStyle = "blue"; // Cor das barras
+            ctx.fillRect(x, canvas.height - altura, larguraBarra, altura);
+        }
+        
+    }
+
+    function getRand(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    setInterval(function () {
+        loop();
+    }, 1000);
+
+    async function fetchAndDisplayData() {
+        try {
+            const response = await fetch('https://payeer.com/api/trade/ticker');
+            const data = await response.json();
+            console.log('Dados da API:', data);
+        } catch (error) {
+            console.error('Erro ao buscar dados da API:', error);
+        }
+    }
+
+    fetchAndDisplayData();
+</script>
 <div class="interface">
     <div class="video" id="player"></div>
     <div class="menu">
