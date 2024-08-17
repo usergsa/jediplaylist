@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <?php
 $ch = curl_init();
 
@@ -10,3 +12,4 @@ curl_close($ch);
 
 echo '<pre>'; print_r(json_decode($response, true)); echo '</pre>';
 <?
+</html>
