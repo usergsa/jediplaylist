@@ -43,14 +43,20 @@
 
     //https://jediplaylist.vercel.app/api/mcdtrx.php
 
-    fetch('https://jediplaylist.vercel.app/api/mcdtrx.php')
-        .then(response => response.text())
-        .then(texto => {
-            console.log(`Texto da página externa: ${texto}`);
-        })
-        .catch(error => {
-            console.error('Erro ao buscar dados:', error);
-        });
+fetch('https://jediplaylist.vercel.app/api/mcdtrx.php') // Substitua pela URL desejada
+  .then(response => response.text())
+  .then(text => {
+    try {
+      const jsonData = JSON.parse(text);
+      console.log('Dados em formato JSON:', jsonData);
+      // Faça o que desejar com os dados aqui
+    } catch (error) {
+      console.error('Erro ao fazer parsing do JSON:', error);
+    }
+  })
+  .catch(error => {
+    console.error('Erro ao buscar dados:', error);
+  });
 
     setInterval(function () {
         loop();
