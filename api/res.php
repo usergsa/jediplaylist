@@ -51,7 +51,7 @@
 
     function desenhar() {
         // Dados do gráfico (valores das barras)
-        dados = [dados[1], dados[2], dados[3], trx];
+        dados = [dados[1], dados[2], dados[3], trx-plot];
         ctx.clearRect(0, 0, canvas.width, canvas.height)
         // Desenhe as barras
         for (let i = 0; i < dados.length; i++) {
