@@ -17,5 +17,5 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 $response = curl_exec($ch);
 curl_close($ch);
 
-echo '<pre>'; print_r(json_decode($response, true)); echo '</pre>';
+echo print_r(json_decode($response, true));
 ?>
