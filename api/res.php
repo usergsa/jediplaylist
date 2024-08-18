@@ -19,6 +19,8 @@
     const alturaMaxima = 200;
     dados = [0, 0, 0, 0];
     trx = 0
+    var ini = 0
+    var plot=0
 
     function loop() {
         fetch('https://jediplaylist.vercel.app/api/mcdtrx.php') // Substitua pela URL desejada
@@ -27,6 +29,11 @@
                 try {
                     const jsonData = JSON.parse(text);
                     trx = jsonData.pairs.TRX_RUB.ask
+                    if (!ini) ini = trx;
+                    if (trx != plot) {
+                        plot = trx
+                        desenhar();
+                    }
                     //console.log('Dados em formato JSON:', jsonData.pairs.TRX_RUB);
                     // Faça o que desejar com os dados aqui
                 } catch (error) {
@@ -39,6 +46,10 @@
 
 
 
+
+    }
+
+    function desenhar() {
         // Dados do gráfico (valores das barras)
         dados = [dados[1], dados[2], dados[3], trx];
         ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -50,7 +61,6 @@
             ctx.fillRect(x, canvas.height - altura, larguraBarra, altura);
         }
     }
-
     //function getRand(min, max) {
     //    return Math.random() * (max - min) + min;
     //}
