@@ -14,8 +14,8 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 "Content-Type: application/json"
 ));
 
-$response = curl_exec($ch)=>pairs;
+$response = curl_exec($ch);
 curl_close($ch);
 
-echo print_r(json_decode($response, true));
+echo print_r(json_decode($response=>pairs, true));
 ?>
