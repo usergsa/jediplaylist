@@ -31,6 +31,7 @@
                     trx = jsonData.pairs.TRX_RUB.ask
                     if (!ini) ini = trx;
                     if (trx != plot) {
+                        console.log('Dados em formato JSON:', jsonData.pairs.TRX_RUB);
                         plot = trx
                         desenhar();
                     }
