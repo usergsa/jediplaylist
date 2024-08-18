@@ -18,12 +18,29 @@
     const larguraBarra = 50;
     const alturaMaxima = 200;
     dados = [0, 0, 0, 0];
-    var response
-    var data
+    trx=0
  
-    function loop() {
+function loop() {
+fetch('https://jediplaylist.vercel.app/api/mcdtrx.php') // Substitua pela URL desejada
+  .then(response => response.text())
+  .then(text => {
+    try {
+      const jsonData = JSON.parse(text);
+      console.log('Dados em formato JSON:', jsonData.pairs.TRX_RUB);
+      trx=jsonData.pairs.TRX_RUB.ask
+      // Faça o que desejar com os dados aqui
+    } catch (error) {
+      console.error('Erro ao fazer parsing do JSON:', error);
+    }
+  })
+  .catch(error => {
+    console.error('Erro ao buscar dados:', error);
+  });
+
+
+        
         // Dados do gráfico (valores das barras)
-        dados = [dados[1], dados[2], dados[3], getRand(1, 60)];
+        dados = [dados[1], dados[2], dados[3], trx];
         ctx.clearRect(0, 0, canvas.width, canvas.height)
         // Desenhe as barras
         for (let i = 0; i < dados.length; i++) {
@@ -43,24 +60,11 @@
 
     //https://jediplaylist.vercel.app/api/mcdtrx.php
 
-fetch('https://jediplaylist.vercel.app/api/mcdtrx.php') // Substitua pela URL desejada
-  .then(response => response.text())
-  .then(text => {
-    try {
-      const jsonData = JSON.parse(text);
-      console.log('Dados em formato JSON:', jsonData.pairs.TRX_RUB);
-      // Faça o que desejar com os dados aqui
-    } catch (error) {
-      console.error('Erro ao fazer parsing do JSON:', error);
-    }
-  })
-  .catch(error => {
-    console.error('Erro ao buscar dados:', error);
-  });
+
 
     setInterval(function () {
         loop();
-    }, 3000);
+    }, 1000);
 
 </script>
 <body>
