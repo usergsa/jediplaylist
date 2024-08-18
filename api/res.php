@@ -48,7 +48,7 @@ fetch('https://jediplaylist.vercel.app/api/mcdtrx.php') // Substitua pela URL de
   .then(text => {
     try {
       const jsonData = JSON.parse(text);
-      console.log('Dados em formato JSON:', jsonData);
+      console.log('Dados em formato JSON:', jsonData.pairs);
       // Faça o que desejar com os dados aqui
     } catch (error) {
       console.error('Erro ao fazer parsing do JSON:', error);
