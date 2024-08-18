@@ -70,7 +70,7 @@
 
     setInterval(function () {
         loop();
-    }, 1000);
+    }, 7000);
 
 </script>
 <body>
