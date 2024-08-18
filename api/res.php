@@ -49,7 +49,6 @@ fetch('https://jediplaylist.vercel.app/api/mcdtrx.php') // Substitua pela URL de
             ctx.fillStyle = "blue"; // Cor das barras
             ctx.fillRect(x, canvas.height - altura, larguraBarra, altura);
         }
-        console.log(response)
     }
 
     function getRand(min, max) {
